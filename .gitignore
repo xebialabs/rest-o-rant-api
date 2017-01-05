@@ -8,7 +8,6 @@ build/
 out/
 target/
 bin/
-src/main/resources/web/help/onlinehelp
 # Maven
 pom.xml
 
@@ -34,12 +33,3 @@ atlassian-ide-plugin.xml
 
 #Mac
 .DS_Store
-
-#tests working folders
-integration-test
-ui-integration-test
-
-recovery.dat
-repository/
-work/
-test-output/
