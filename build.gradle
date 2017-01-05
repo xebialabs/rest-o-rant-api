@@ -11,6 +11,7 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'war'
 apply plugin: 'spring-boot'
 apply plugin: 'com.bmuschko.docker-remote-api'
 
@@ -19,13 +20,16 @@ import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 
 repositories {
   mavenCentral()
+  maven { url "http://repo.spring.io/libs-snapshot" }
 }
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
   compile("org.springframework.boot:spring-boot-starter-web")
+  providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
 
 docker {
@@ -35,6 +39,10 @@ docker {
 
 jar {
   baseName = 'rest-o-rant-api'
+}
+
+war {
+  archiveName 'rest-o-rant-api.war'
 }
 
 task createDockerfile(type: Dockerfile) {

@@ -1,4 +1,45 @@
-build
-.gradle
-.idea
+# use glob syntax.
+syntax: glob
+.gradle/
+
+
+# Build output
+build/
+out/
+target/
+bin/
+src/main/resources/web/help/onlinehelp
+# Maven
+pom.xml
+
+# Eclipse
+.metadata/
+.settings/
+.classpath
+.project
+.pydevproject
+
+# IntelliJ
+.idea/
 *.iml
+*.ipr
+*.iws
+*.log
+s101plugin.state
+
+# If you have these in your workspace you need to clean up!
+*.hdb*
+build-number.txt
+atlassian-ide-plugin.xml
+
+#Mac
+.DS_Store
+
+#tests working folders
+integration-test
+ui-integration-test
+
+recovery.dat
+repository/
+work/
+test-output/
