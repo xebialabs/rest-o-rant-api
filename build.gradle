@@ -30,6 +30,11 @@ dependencies {
   compile("org.springframework.boot:spring-boot-starter-web")
   compile("org.springframework.boot:spring-boot-starter-jdbc")
   compile("mysql:mysql-connector-java:5.1.13")
+  compile("commons-dbcp:commons-dbcp:1.4")
+  compile("org.apache.commons:commons-dbcp2:2.0")
+  compile("org.apache.tomcat:tomcat-dbcp:8.0.0-RC1")
+  compile group: 'com.h2database', name: 'h2', version: '1.0.60'
+
 
   providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
@@ -72,4 +77,11 @@ task buildDockerImage(type: DockerBuildImage) {
 
 task wrapper(type: Wrapper) {
   gradleVersion = '2.11'
+}
+
+bootRun {
+  systemProperties System.properties
+  if ( project.hasProperty('args') ) {
+    args project.args.split('\\s+')
+  }
 }

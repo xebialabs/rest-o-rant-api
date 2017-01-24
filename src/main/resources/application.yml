@@ -1,6 +1,2 @@
- server:
+server:
     contextPath: /rest-o-rant-api
-
- spring:
-     datasource:
-        jndi-name: jdbc/RestorantDB

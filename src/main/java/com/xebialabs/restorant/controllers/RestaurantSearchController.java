@@ -1,28 +1,24 @@
-package com.xebialabs.restorant;
+package com.xebialabs.restorant.controllers;
 
+import com.xebialabs.restorant.models.Restaurant;
+import com.xebialabs.restorant.services.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class RestaurantSearchController {
 
   @Autowired
-  RestaurantDao dao;
+  private RestaurantService restaurantService;
 
-  @RequestMapping("/findrestaurants")
+  @RequestMapping(value = "/findrestaurants" , method = RequestMethod.GET)
   public List<Restaurant> greeting(@RequestParam(value = "q", defaultValue = "") String q) {
-    List<Restaurant> selectedRestaurants = new ArrayList<   Restaurant>();
-    for(Restaurant r: dao.getAllRestaurants()) {
-      if(r.matches(q)) {
-        selectedRestaurants.add(r);
-      }
-    }
-    return selectedRestaurants;
+    return restaurantService.getAllRestaurants(q);
   }
 
 }

@@ -1,4 +1,4 @@
-package com.xebialabs.restorant;
+package com.xebialabs.restorant.models;
 
 public class Restaurant {
 
