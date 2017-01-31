@@ -25,7 +25,7 @@
       username="<db_user_name>" password="<db_password>"
       driverClassName="com.mysql.jdbc.Driver"
       url="jdbc:mysql://localhost:<my_sql_port>/RestorantDB"/>
-to conf/context.xml.
+   to conf/context.xml.
 
 # To run without Db
   None of the configurations mentioned above are necessary.
