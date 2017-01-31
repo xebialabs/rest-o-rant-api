@@ -11,9 +11,6 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by atiwary on 23/01/17.
- */
 @Repository
 @ConditionalOnProperty(prefix = "spring.datasource", name = "jndi-lookup", matchIfMissing = true)
 @ConditionalOnMissingBean(RestaurantDataDao.class)

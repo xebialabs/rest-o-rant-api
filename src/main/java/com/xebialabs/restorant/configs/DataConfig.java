@@ -8,9 +8,6 @@ import org.springframework.boot.autoconfigure.jdbc.JndiDataSourceAutoConfigurati
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-/**
- * Created by atiwary on 26/01/17.
- */
 @Configuration
 @Profile("default")
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, EmbeddedDataSourceConfiguration.class,JndiDataSourceAutoConfiguration.class})

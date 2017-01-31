@@ -7,9 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by atiwary on 23/01/17.
- */
+
 @Service
 public class RestaurantService {
 

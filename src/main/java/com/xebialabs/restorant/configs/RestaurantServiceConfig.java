@@ -6,9 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Created by atiwary on 23/01/17.
- */
 @Configuration
 public class RestaurantServiceConfig {
 

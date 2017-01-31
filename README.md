@@ -15,3 +15,20 @@
 1. Open `http://<DOCKER>:<PORT>/`.
 1. See the restaurant main page.
 1. Click the Search button.
+
+# To run with Db
+
+1. Add a file setenv.sh to tomcat/bin directory and append the following - JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=withDb”
+2. Add the jndi-lookup config 
+      <Resource name="jdbc/RestorantDB" auth="Container" type="javax.sql.DataSource"
+      maxActive="50" maxIdle="30" maxWait="10000"
+      username="<db_user_name>" password="<db_password>"
+      driverClassName="com.mysql.jdbc.Driver"
+      url="jdbc:mysql://localhost:<my_sql_port>/RestorantDB"/>
+to conf/context.xml.
+
+# To run without Db
+  None of the configurations mentioned above are necessary.
+
+# To run with db and embedded tomcat
+  Use the following command  ./gradlew clean -Dspring.profiles.active=embedded bootRun. 
