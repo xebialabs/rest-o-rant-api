@@ -24,7 +24,3 @@
 # To run without Db
 
   None of the configurations mentioned above are necessary.
-
-# To run with db and embedded tomcat
-
-  Use the following command  ./gradlew clean -Dspring.profiles.active=embedded bootRun. 
